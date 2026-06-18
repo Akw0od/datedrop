@@ -3,6 +3,7 @@
 import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { GoogleLogo } from "@phosphor-icons/react";
 import { useLang } from "@/components/lang-provider";
 import { LangToggle } from "@/components/lang-toggle";
 import { t } from "@/lib/dict";
@@ -40,6 +41,18 @@ function LoginForm() {
     }
     router.push(next);
     router.refresh();
+  }
+
+  async function google() {
+    setError(null);
+    const supabase = createClient();
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
+      },
+    });
+    if (error) setError(t(lang, "login.oauth_fail"));
   }
 
   const inputCls =
@@ -86,7 +99,22 @@ function LoginForm() {
             {mode === "signin" ? t(lang, "login.sub_signin") : t(lang, "login.sub_signup")}
           </p>
 
-          <form onSubmit={submit} className="mt-8 space-y-5">
+          <button
+            type="button"
+            onClick={google}
+            className="mt-8 flex w-full items-center justify-center gap-2.5 rounded-xl border border-zinc-200 bg-white py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-50 active:scale-[0.98]"
+          >
+            <GoogleLogo size={18} weight="bold" className="text-rose-600" />
+            {t(lang, "login.google")}
+          </button>
+
+          <div className="my-5 flex items-center gap-3">
+            <span className="h-px flex-1 bg-zinc-200" />
+            <span className="text-xs text-zinc-400">{t(lang, "login.or")}</span>
+            <span className="h-px flex-1 bg-zinc-200" />
+          </div>
+
+          <form onSubmit={submit} className="space-y-5">
             {mode === "signup" && (
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-medium text-zinc-700">
