@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var j=["https://claude.ai","https://preview.claude.ai"];var x=true;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const M=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const R=q.length-q.trimStart().length;const m=q.length-q.trimEnd().length;if(R+m>=q.length)return K;return w(`txt:${C}:${K.start+R}:${K.end-m}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;M($,E(C),B(C))},JSXFragment($,C){M($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.type==="omelette-preview-refresh"){if(typeof J.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?(\.[0-9]+\.[0-9a-f]{16})?$/.test(J.token))return;const z=Math.max(1,Math.floor((J.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+J.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+z;return}if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DateDrop · 约会周报分享卡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Geist+Mono:wght@400;500;600&family=Ma+Shan+Zheng&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream:    #f1e7d2;
+    --cream-hi: #f7efdd;
+    --kraft:    #e7d9bb;
+    --paperwhite:#fbf6ec;
+    --ink:      #4a3f34;
+    --ink-soft: #8a7a66;
+    --rose:     #bd7b82;
+    --rose-deep:#a85d67;
+    --terra:    #c67c52;
+    --sage:     #93a079;
+    --twine:    #c9b48c;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #e9e4da;
+    background-image:
+      radial-gradient(120% 80% at 50% 0%, #efece4 0%, #e4ddd0 55%, #dcd5c7 100%);
+    font-family: "Noto Sans SC", system-ui, sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------------- presentation chrome ---------------- */
+  .studio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px 80px;
+  }
+  .studio-head { text-align: center; margin-bottom: 30px; }
+  .studio-head h1 {
+    font-family: "Ma Shan Zheng", cursive;
+    font-size: 30px; font-weight: 400; color: #6b5d4c;
+    margin: 0; letter-spacing: 0.04em; white-space: nowrap;
+  }
+  .studio-head p {
+    font-family: "Geist Mono", monospace;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #a99c87; margin: 8px 0 0;
+  }
+  .gallery {
+    display: flex; gap: 64px; align-items: flex-start;
+    justify-content: center; flex-wrap: wrap;
+  }
+  .frame-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .frame-label {
+    font-family: "Geist Mono", monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #9a8c77;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .frame-label b { color: #6b5d4c; font-weight: 600; }
+
+  /* phone bezel for the 9:16 story card */
+  .phone {
+    position: relative; background: #2c2722; border-radius: 54px;
+    padding: 11px;
+    box-shadow: 0 50px 90px -36px rgba(60,48,30,0.55), 0 0 0 1px rgba(0,0,0,0.5);
+  }
+  .phone .screen { position: relative; overflow: hidden; border-radius: 44px; }
+  .phone .island {
+    position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+    width: 92px; height: 24px; background: #11100e; border-radius: 99px; z-index: 60;
+  }
+  /* loose card (4:5) sits on a soft mat */
+  .mat {
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 44px 80px -34px rgba(60,48,30,0.5), 0 0 0 1px rgba(120,100,70,0.08);
+  }
+
+  /* ---------------- the card surface ---------------- */
+  .card {
+    position: relative; overflow: hidden;
+    background-color: var(--cream);
+    background-image:
+      radial-gradient(135% 100% at 50% -8%, var(--cream-hi) 0%, var(--cream) 42%, #ead9b8 100%);
+    color: var(--ink);
+    isolation: isolate;
+  }
+  /* fiber grain */
+  .card::after {
+    content: ""; position: absolute; inset: 0; z-index: 40; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.10; mix-blend-mode: multiply;
+  }
+  /* very soft vignette so edges feel like a real sheet */
+  .card::before {
+    content: ""; position: absolute; inset: 0; z-index: 39; pointer-events: none;
+    box-shadow: inset 0 0 120px 10px rgba(120,96,58,0.10);
+  }
+
+  /* torn-paper piece: filled background via ::before, content stays crisp */
+  .paper { position: relative; }
+  .paper > .fill {
+    content: ""; position: absolute; inset: -3px; z-index: -1;
+    background: var(--paper-fill, var(--paperwhite));
+    border-radius: 10px;
+    filter: url(#deckle) drop-shadow(0 10px 16px rgba(74,55,30,0.16));
+  }
+
+  /* polaroid */
+  .pol {
+    position: absolute; background: var(--paperwhite);
+    padding: 14px 14px 40px;
+    box-shadow: 0 18px 30px -14px rgba(74,55,30,0.40), 0 2px 4px rgba(74,55,30,0.12);
+    border-radius: 3px;
+  }
+  .pol img {
+    display: block; width: 100%; height: 100%; object-fit: cover;
+    background: #ded4c0; border-radius: 1px;
+    filter: saturate(0.86) contrast(0.98) brightness(1.02) sepia(0.10);
+  }
+  .pol .cap {
+    position: absolute; left: 0; right: 0; bottom: 9px; text-align: center;
+    font-family: "Caveat", cursive; font-size: 26px; color: #7c6a55; line-height: 1;
+  }
+  /* washi tape */
+  .tape {
+    position: absolute; width: 116px; height: 38px; z-index: 3;
+    opacity: 0.82; mix-blend-mode: multiply;
+    background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.18) 0 7px, rgba(255,255,255,0) 7px 14px);
+    box-shadow: 0 2px 4px rgba(74,55,30,0.14);
+    clip-path: polygon(3% 8%, 97% 0, 99% 86%, 1% 100%);
+  }
+  .tape.rose  { background-color: rgba(189,123,130,0.62); }
+  .tape.sage  { background-color: rgba(147,160,121,0.62); }
+  .tape.terra { background-color: rgba(198,124,82,0.58); }
+  /* photo corners */
+  .corner {
+    position: absolute; width: 30px; height: 30px; z-index: 3;
+    background: linear-gradient(135deg, rgba(74,55,30,0.62) 0 48%, transparent 48%);
+  }
+
+  .ma { font-family: "Ma Shan Zheng", cursive; font-weight: 400; }
+  .cav { font-family: "Caveat", cursive; }
+  .nr { font-family: "Newsreader", serif; }
+  .mono { font-family: "Geist Mono", monospace; }
+
+  /* rubber stamp (postmark) */
+  .stamp {
+    display: inline-block; position: relative;
+    border: 2.5px solid var(--rose-deep); border-radius: 8px;
+    padding: 9px 18px 7px; color: var(--rose-deep);
+    box-shadow: inset 0 0 0 2px var(--cream), inset 0 0 0 4px var(--rose-deep);
+    opacity: 0.86; mix-blend-mode: multiply;
+  }
+  .stamp .wk { font-family: "Ma Shan Zheng", cursive; font-size: 30px; line-height: 1; }
+  .stamp .dt { font-family: "Geist Mono", monospace; font-size: 12px; letter-spacing: 0.16em; margin-top: 4px; }
+
+  /* stat tag (paper luggage tag on twine) */
+  .tag {
+    position: relative; background: var(--paper-fill, var(--paperwhite));
+    padding: 14px 16px 13px 22px;
+    box-shadow: 0 10px 18px -10px rgba(74,55,30,0.34);
+    clip-path: polygon(11% 0, 100% 0, 100% 100%, 11% 100%, 0 50%);
+  }
+  .tag .hole { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); width: 9px; height: 9px; border-radius: 99px; background: var(--cream); box-shadow: inset 0 0 0 1.5px rgba(74,55,30,0.28); }
+  .tag .n { font-family: "Geist Mono", monospace; font-weight: 600; color: var(--ink); line-height: 1; }
+  .tag .u { font-family: "Geist Mono", monospace; color: var(--ink-soft); }
+  .tag .l { font-family: "Noto Sans SC", sans-serif; color: var(--ink-soft); }
+
+  /* footer micro-stamp */
+  .madewith {
+    display: inline-flex; align-items: center; gap: 7px;
+    border: 1.5px solid var(--ink-soft); border-radius: 99px;
+    padding: 6px 13px; color: var(--ink-soft);
+    font-family: "Geist Mono", monospace; font-size: 12px; letter-spacing: 0.12em;
+    opacity: 0.72; mix-blend-mode: multiply;
+  }
+  .madewith .dot { width: 7px; height: 7px; border-radius: 99px; background: var(--rose); }
+</style>
+</head>
+<body>
+<!-- hidden SVG filters -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="deckle">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.022" numOctaves="3" seed="7" result="n" />
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+    <filter id="deckle-sm">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.03" numOctaves="3" seed="3" result="n" />
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
+
+<div class="studio">
+  <div class="studio-head">
+    <h1>约会周报 · 分享卡</h1>
+    <p>DateDrop · keepsake</p>
+  </div>
+  <div class="gallery" id="gallery"></div>
+</div>
+
+<script>
+const CARD = {
+  week: "第 12 周",
+  stampDate: "JUN · 13 · 26",
+  dateText: "6.13　周六",
+  couple: "阿傲　&　小白",
+  hero: ["海风、小白球，", "和一场迟来的", "日落晚餐"],
+  photos: [
+    { seed: "datedrop-putt-92",  cap: "先赢一局", tape: "rose"  },
+    { seed: "datedrop-baker-41", cap: "8:21 的光", tape: "sage"  },
+    { seed: "datedrop-ferry-77", cap: "靠窗那桌", deco: "corner" },
+  ],
+  stops: ["Urban Putt", "Baker Beach", "Ferry Building"],
+  stats: [
+    { n: "5.2",  u: "km", l: "一起走了" },
+    { n: "1",    u: "次", l: "看了日落" },
+    { n: "23",   u: "张", l: "拍了照片" },
+    { n: "74",   u: "",   l: "这周花了", money: true },
+  ],
+  note: ["小白第一杆就进了洞，", "愿赌服输，晚饭她请。", "日落那阵风大得站不稳——", "你说，值。"],
+  signer: "— 阿傲",
+};
+
+const PALETTE = ["rose", "terra", "sage"];
+
+/* ---- builders ---- */
+function polaroid(p, { left, top, rot, w, h }) {
+  const tape = p.tape
+    ? `<span class="tape ${p.tape}" style="left:50%;top:-16px;transform:translateX(-50%) rotate(${(-rot*1.4).toFixed(1)}deg)"></span>`
+    : "";
+  const corners = p.deco === "corner"
+    ? `<span class="corner" style="left:-4px;top:-4px;transform:rotate(0deg)"></span>
+       <span class="corner" style="right:-4px;bottom:30px;transform:rotate(180deg)"></span>`
+    : "";
+  return `<figure class="pol" style="left:${left};top:${top};width:${w}px;height:${h}px;transform:rotate(${rot}deg)">
+    ${tape}${corners}
+    <img src="https://picsum.photos/seed/${p.seed}/640/720" alt="" />
+    <figcaption class="cap">${p.cap}</figcaption>
+  </figure>`;
+}
+
+function bunting(n, w) {
+  const flags = [];
+  const cols = ["var(--rose)", "var(--sage)", "var(--terra)", "var(--kraft)"];
+  const seg = w / (n + 1);
+  let path = `M0,14 `;
+  for (let i = 1; i <= n; i++) path += `Q ${seg*i - seg/2},${i%2?30:24} ${seg*i},16 `;
+  path += `T ${w},14`;
+  for (let i = 1; i <= n; i++) {
+    const x = seg * i;
+    flags.push(`<path d="M${x-15},15 L${x+15},15 L${x},44 Z" fill="${cols[i%cols.length]}" opacity="0.9"/>`);
+  }
+  return `<svg width="${w}" height="52" viewBox="0 0 ${w} 52" style="display:block">
+    <path d="${path}" fill="none" stroke="var(--twine)" stroke-width="2.5" stroke-linecap="round"/>
+    ${flags.join("")}
+  </svg>`;
+}
+
+function footprint(stops, w) {
+  const pad = 40, span = (w - pad*2) / (stops.length - 1);
+  let dots = "", labels = "";
+  const ys = [54, 30, 50];
+  let path = "";
+  stops.forEach((s, i) => {
+    const x = pad + span * i, y = ys[i % ys.length];
+    if (i === 0) path += `M${x},${y} `;
+    else {
+      const px = pad + span*(i-1), py = ys[(i-1)%ys.length];
+      path += `C ${px+span*0.4},${py-26} ${x-span*0.4},${y-26} ${x},${y} `;
+    }
+    dots += `<circle cx="${x}" cy="${y}" r="7" fill="var(--rose-deep)"/><circle cx="${x}" cy="${y}" r="13" fill="none" stroke="var(--rose)" stroke-width="1.5" opacity="0.55"/>`;
+    const anchor = i === 0 ? "start" : i === stops.length-1 ? "end" : "middle";
+    const lx = i === 0 ? x-6 : i === stops.length-1 ? x+6 : x;
+    labels += `<text x="${lx}" y="${y+34}" text-anchor="${anchor}" font-family="Newsreader, serif" font-style="italic" font-size="24" fill="var(--ink)">${s}</text>`;
+  });
+  return `<svg width="${w}" height="104" viewBox="0 0 ${w} 104" style="display:block">
+    <path d="${path}" fill="none" stroke="var(--rose)" stroke-width="2.5" stroke-dasharray="2 8" stroke-linecap="round"/>
+    ${dots}${labels}
+  </svg>`;
+}
+
+function statTag(s, rot) {
+  return `<div class="tag" style="transform:rotate(${rot}deg);--paper-fill:var(--paperwhite)">
+    <span class="hole"></span>
+    <div style="display:flex;align-items:baseline;gap:3px">
+      <span class="n" style="font-size:32px">${s.money?'$':''}${s.n}</span>
+      <span class="u" style="font-size:15px">${s.u}</span>
+    </div>
+    <div class="l" style="font-size:14px;margin-top:3px">${s.l}</div>
+  </div>`;
+}
+
+/* photo cluster positions per format */
+const CLUSTERS = {
+  story: [
+    { left: "2%",  top: "6px",   rot: -4,  w: 296, h: 348 },
+    { left: "40%", top: "124px", rot: 3.2, w: 326, h: 392 },
+    { left: "6%",  top: "372px", rot: 2,   w: 276, h: 300 },
+  ],
+  rednote: [
+    { left: "3%",  top: "0",     rot: -3.5, w: 212, h: 252 },
+    { left: "43%", top: "52px",  rot: 3,    w: 240, h: 288 },
+    { left: "14%", top: "188px", rot: 2.2,  w: 188, h: 200 },
+  ],
+};
+
+function buildCard(format) {
+  const isStory = format === "story";
+  const W = 1080, H = isStory ? 1920 : 1350;
+  const padX = isStory ? 96 : 84;
+  const clusterH = isStory ? 680 : 396;
+
+  const photosHtml = CARD.photos
+    .map((p, i) => polaroid(p, CLUSTERS[format][i]))
+    .join("");
+
+  const statRots = [-2.5, 1.5, -1, 2];
+  const statsHtml = CARD.stats.map((s, i) => statTag(s, statRots[i])).join("");
+
+  return `
+  <div class="card" style="width:${W}px;height:${H}px;padding:${isStory?64:40}px ${padX}px ${isStory?44:30}px">
+    <!-- bunting -->
+    <div style="position:absolute;left:0;right:0;top:${isStory?34:24}px;display:flex;justify-content:center;z-index:5">
+      ${bunting(7, W - 120)}
+    </div>
+
+    <!-- header: stamp + date -->
+    <div style="display:flex;flex-direction:column;align-items:center;margin-top:${isStory?40:20}px;position:relative;z-index:6">
+      <div class="stamp" style="transform:rotate(-3deg)">
+        <div class="wk" style="font-size:${isStory?30:26}px">${CARD.week}</div>
+        <div class="dt">${CARD.stampDate} · SF</div>
+      </div>
+      <div class="ma" style="font-size:${isStory?64:50}px;color:var(--ink);margin-top:${isStory?16:8}px;letter-spacing:0.06em">${CARD.couple}</div>
+      <div class="mono" style="font-size:13px;letter-spacing:0.24em;color:var(--ink-soft);margin-top:6px">${CARD.dateText.replace(/　/g,'  ')} · SAN FRANCISCO</div>
+    </div>
+
+    <!-- hero title -->
+    <div class="ma" style="position:relative;z-index:6;text-align:center;margin-top:${isStory?22:12}px;font-size:${isStory?72:46}px;line-height:1.18;color:var(--ink)">
+      ${CARD.hero.map((l,i)=>`<div>${i===2?`<span style="color:var(--rose-deep)">${l}</span>`:l}</div>`).join("")}
+    </div>
+
+    <!-- photo collage -->
+    <div style="position:relative;z-index:6;height:${clusterH}px;margin-top:${isStory?28:12}px">
+      ${photosHtml}
+      <!-- little cut hearts tucked in -->
+      <svg width="46" height="42" viewBox="0 0 24 24" style="position:absolute;right:${isStory?40:14}px;top:${isStory?40:14}px;transform:rotate(12deg)"><path d="M12 21s-7.5-4.7-10-9.3C.4 8.4 2 5 5.2 5c2 0 3.2 1.2 3.8 2.3C9.6 6.2 10.8 5 12.8 5 16 5 17.6 8.4 16 11.7 13.5 16.3 12 21 12 21z" fill="var(--rose)" opacity="0.9"/></svg>
+      <svg width="30" height="28" viewBox="0 0 24 24" style="position:absolute;left:${isStory?14:4}px;bottom:6px;transform:rotate(-10deg)"><path d="M12 2l2.6 6.3L21 9l-5 4.3L17.6 20 12 16.4 6.4 20 8 13.3 3 9l6.4-.7z" fill="var(--terra)" opacity="0.85"/></svg>
+    </div>
+
+    <!-- footprint -->
+    <div style="position:relative;z-index:6;margin-top:${isStory?14:4}px">
+      <div class="mono" style="font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-soft);text-align:center;margin-bottom:6px">这周的足迹</div>
+      <div style="display:flex;justify-content:center">${footprint(CARD.stops, W - padX*2)}</div>
+    </div>
+
+    <!-- stat tags -->
+    <div style="position:relative;z-index:6;display:flex;justify-content:center;gap:${isStory?22:14}px;flex-wrap:wrap;margin-top:${isStory?22:10}px">
+      ${statsHtml}
+    </div>
+
+    <!-- handwritten note -->
+    <div class="paper" style="position:relative;z-index:6;width:${isStory?80:82}%;margin:${isStory?28:14}px auto 0;padding:${isStory?'26px 32px':'18px 26px'};transform:rotate(-1.2deg);--paper-fill:#f5edda">
+      <span class="fill"></span>
+      <div class="ma" style="font-size:${isStory?30:24}px;line-height:1.5;color:var(--ink)">
+        ${CARD.note.map(l=>`<div>${l}</div>`).join("")}
+      </div>
+      <div class="cav" style="text-align:right;font-size:${isStory?28:24}px;color:var(--rose-deep);margin-top:8px">${CARD.signer}</div>
+    </div>
+
+    <!-- footer -->
+    <div style="position:relative;z-index:6;display:flex;justify-content:center;margin-top:${isStory?26:10}px">
+      <span class="madewith"><span class="dot"></span>made with DateDrop</span>
+    </div>
+  </div>`;
+}
+
+/* ---- mount + scale ---- */
+const STORY_W = 1080 + 22, STORY_H = 1920 + 22;  // incl. bezel padding
+const RED_W = 1080, RED_H = 1350;
+
+function render() {
+  const gallery = document.getElementById("gallery");
+  gallery.innerHTML = `
+    <div class="frame-wrap">
+      <div class="frame-label"><b>9:16</b> · Story / 抖音 · 1080×1920</div>
+      <div class="fit" id="fit-story"><div class="phone" id="ph-story"><div class="island"></div><div class="screen">${buildCard("story")}</div></div></div>
+    </div>
+    <div class="frame-wrap">
+      <div class="frame-label"><b>4:5</b> · 小红书 · 1080×1350</div>
+      <div class="fit" id="fit-red"><div class="mat" id="ph-red">${buildCard("rednote")}</div></div>
+    </div>`;
+  scale();
+}
+
+function scale() {
+  const availH = window.innerHeight - 200;
+  const availW = window.innerWidth - 48;
+  // both cards side by side: combined natural width + gap must fit
+  const byWidth = (availW - 64) / (STORY_W + RED_W);
+  const byHeight = availH / STORY_H;
+  const s = Math.max(0.18, Math.min(0.5, byWidth, byHeight));
+
+  applyFit("fit-story", "ph-story", STORY_W, STORY_H, s);
+  applyFit("fit-red", "ph-red", RED_W, RED_H, s);
+}
+function applyFit(fitId, elId, w, h, s) {
+  const fit = document.getElementById(fitId);
+  const el = document.getElementById(elId);
+  fit.style.width = (w * s) + "px";
+  fit.style.height = (h * s) + "px";
+  el.style.width = w + "px";
+  el.style.transform = `scale(${s})`;
+  el.style.transformOrigin = "top left";
+}
+
+window.addEventListener("resize", scale);
+window.addEventListener("load", scale);
+render();
+</script>
+</body>
+</html>
