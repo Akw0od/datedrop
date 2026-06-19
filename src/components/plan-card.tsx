@@ -23,7 +23,7 @@ import { useLang } from "@/components/lang-provider";
 import { t, pick, kindLabel, type Lang } from "@/lib/dict";
 import type { Plan, StopOption } from "@/lib/types";
 
-const MAX_REROLLS = 3;
+const MAX_REROLLS = 9;
 const spring = { type: "spring", stiffness: 320, damping: 32 } as const;
 
 const MOODS = [

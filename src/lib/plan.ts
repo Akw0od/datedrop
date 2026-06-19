@@ -5,7 +5,7 @@ import { nextSaturday } from "@/lib/dates";
 import { PREMADE_SEATTLE } from "@/lib/premade-seattle";
 import type { Couple, Plan, PlanStop, StopOption, Venue } from "@/lib/types";
 
-const MAX_REROLLS = 3;
+const MAX_REROLLS = 9; // 预制方案免费，放宽整体换；接 LLM 后可下调
 const MAX_OPTIONS = 4; // 每站最多备选数（含首选），换站在这几个里轮换
 
 // 城市坐标（场地库扩展到新城市时同步加）
