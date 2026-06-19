@@ -296,19 +296,16 @@ export function PlanCard({
   async function accept() {
     if (!plan || plan.accepted_by.includes(meId)) return;
     setBusy(true);
-    const acceptedBy = [...plan.accepted_by, meId];
-    const status = memberIds.every((id) => acceptedBy.includes(id)) ? "accepted" : plan.status;
-    const { error } = await supabase.from("plans").update({ accepted_by: acceptedBy, status }).eq("id", plan.id);
-    if (!error) setPlan({ ...plan, accepted_by: acceptedBy, status });
+    const { data } = await supabase.rpc("accept_plan", { p_plan_id: plan.id });
+    if (data) setPlan((Array.isArray(data) ? data[0] : data) as Plan);
     setBusy(false);
   }
 
   async function unaccept() {
     if (!plan) return;
     setBusy(true);
-    const acceptedBy = plan.accepted_by.filter((id) => id !== meId);
-    const { error } = await supabase.from("plans").update({ accepted_by: acceptedBy, status: "proposed" }).eq("id", plan.id);
-    if (!error) setPlan({ ...plan, accepted_by: acceptedBy, status: "proposed" });
+    const { data } = await supabase.rpc("unaccept_plan", { p_plan_id: plan.id });
+    if (data) setPlan((Array.isArray(data) ? data[0] : data) as Plan);
     setBusy(false);
   }
 

@@ -107,7 +107,30 @@ async function generateFromPremade(couple: Couple, mood?: string | null): Promis
 
   const pool = PREMADE_SEATTLE.filter((p) => !mood || p.mood === mood || p.mood === null);
   const list = pool.length ? pool : PREMADE_SEATTLE;
-  const chosen = list[rerollCount % list.length];
+
+  // 用滑卡匹配排序：两人都右滑的卡 → 偏好类别 → 命中越多的方案排越前。
+  // 没匹配时全 0 分、保持原序（等同未排序）。这让"盲选"真正影响拿到的计划。
+  const { data: matchRows } = await admin
+    .from("matches")
+    .select("date_cards(style_tags)")
+    .eq("couple_id", couple.id);
+  const prefCats = new Set(
+    (matchRows ?? [])
+      .flatMap((r) => (r.date_cards as unknown as { style_tags: string[] })?.style_tags ?? [])
+      .flatMap((tag) => TAG_TO_CATEGORIES[tag] ?? [])
+  );
+  const ranked = list
+    .map((p) => ({
+      p,
+      score: prefCats.size
+        ? p.stops.reduce(
+            (s, st) => s + (st.options.some((o) => prefCats.has(o.category)) ? 1 : 0),
+            0
+          )
+        : 0,
+    }))
+    .sort((a, b) => b.score - a.score);
+  const chosen = ranked[rerollCount % ranked.length].p;
 
   const timeline: PlanStop[] = chosen.stops.map((s) => ({
     time: s.time,

@@ -52,6 +52,8 @@ const zh: Dict = {
   "home.no_match": "还没有匹配。两个人都滑过同一张卡并且都选了想去，它就会出现在这里。",
   "home.copy": "复制",
   "home.copied": "已复制",
+  "home.unpair": "解绑",
+  "home.unpair_confirm": "解绑后对方会被移出，需要用新邀请链接重新连接。确定吗？",
   // 滑卡
   "swipe.home": "首页",
   "swipe.like": "想去",
@@ -161,6 +163,8 @@ const en: Dict = {
   "home.no_match": "No matches yet. When you both swipe right on the same card, it shows up here.",
   "home.copy": "Copy",
   "home.copied": "Copied",
+  "home.unpair": "Unpair",
+  "home.unpair_confirm": "Unpairing removes your partner — you'll need a new invite link to reconnect. Sure?",
   "swipe.home": "Home",
   "swipe.like": "Want to",
   "swipe.nope": "Pass",

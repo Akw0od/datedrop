@@ -8,6 +8,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { SignOutButton } from "@/components/sign-out-button";
 import { CopyButton } from "@/components/copy-button";
+import { UnpairButton } from "@/components/unpair-button";
 import { PlanCard } from "@/components/plan-card";
 import { TagIcon } from "@/components/tag-icon";
 import { LangToggle } from "@/components/lang-toggle";
@@ -114,10 +115,13 @@ export default async function Home() {
               <p className={label}>{t(lang, "home.us")}</p>
               {partnerId ? (
                 <div className={`${panel} mt-3 p-6`}>
-                  <div className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
-                    {me?.display_name}
-                    <HeartStraight size={14} weight="fill" className="text-rose-600" />
-                    {partner?.display_name}
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
+                      {me?.display_name}
+                      <HeartStraight size={14} weight="fill" className="text-rose-600" />
+                      {partner?.display_name}
+                    </div>
+                    <UnpairButton />
                   </div>
                   <p className="mt-2 text-xs text-zinc-500">
                     {t(lang, "home.pool_count", { n: matchCount ?? 0 })}
