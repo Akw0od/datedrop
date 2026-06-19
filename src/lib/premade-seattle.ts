@@ -270,4 +270,172 @@ export const PREMADE_SEATTLE: PremadePlan[] = [
       ]},
     ],
   },
+  {
+    mood: "chill",
+    title_zh: "慵懒早午餐",
+    title_en: "A Lazy Brunch",
+    summary_zh: "睡到自然醒，慢悠悠吃顿早午餐，公园消食，冰淇淋收尾。",
+    summary_en: "Sleep in, a slow brunch, a park to walk it off, ice cream to end.",
+    stops: [
+      { time: "11:30", slot_zh: "早午餐", slot_en: "Brunch", options: [
+        o("Portage Bay Cafe", "South Lake Union", "food", 2, "Portage Bay 早午餐", "Portage Bay brunch", "招牌松饼自助配料台", "The famous toppings bar for your pancakes"),
+        o("Pike Place Market", "Downtown", "market", 1, "派克市场觅食", "Graze Pike Place", "边逛边吃，随性", "Wander and snack, no plan needed"),
+        o("Storyville Coffee", "Pike Place", "coffee", 2, "Storyville 手冲", "Storyville pour-over", "靠窗慢慢醒", "Wake up slowly by the window"),
+      ]},
+      { time: "14:00", slot_zh: "消食", slot_en: "Stroll", options: [
+        o("Gas Works Park", "Wallingford", "park", 1, "Gas Works 草坡", "Gas Works hill", "草坡看天际线放风筝", "Skyline views, fly a kite"),
+        o("Green Lake Park", "Green Lake", "park", 1, "Green Lake 环湖", "Green Lake loop", "平路慢走", "An easy flat loop"),
+        o("Volunteer Park Conservatory", "Capitol Hill", "garden", 1, "维多利亚温室", "Victorian conservatory", "雨天躲进热带", "Tropics on a wet day"),
+      ]},
+      { time: "16:30", slot_zh: "甜点", slot_en: "Sweet", options: [
+        o("Molly Moon's", "Wallingford", "dessert", 1, "Molly Moon's", "Molly Moon's", "蜂蜜薰衣草必点", "Get the honey lavender"),
+        o("Salt & Straw", "Capitol Hill", "dessert", 2, "Salt & Straw", "Salt & Straw", "脑洞口味", "Wildly inventive flavors"),
+        o("Pike Place Chowder", "Pike Place", "food", 2, "海鲜浓汤", "Chowder", "想吃咸的", "If you want something savory"),
+      ]},
+    ],
+  },
+  {
+    mood: "chill",
+    title_zh: "雨天窝着",
+    title_en: "Cozy Rainy Day",
+    summary_zh: "全程室内——咖啡、展馆、热乎晚餐，下再大的雨也不怕。",
+    summary_en: "All indoors — coffee, a museum, a warm dinner. Let it pour.",
+    stops: [
+      { time: "13:00", slot_zh: "咖啡", slot_en: "Coffee", options: [
+        o("Analog Coffee", "Capitol Hill", "coffee", 1, "Analog 黑胶咖啡", "Analog Coffee", "极简空间手冲", "Minimalist room, pour-overs"),
+        o("Victrola Coffee Roasters", "Capitol Hill", "coffee", 1, "Victrola 老派咖啡", "Victrola", "松弛慢聊", "Mellow, made for talking"),
+        o("Storyville Coffee", "Pike Place", "coffee", 2, "Storyville", "Storyville", "靠窗看海湾", "Bay view by the window"),
+      ]},
+      { time: "15:00", slot_zh: "展馆", slot_en: "Indoors", options: [
+        o("Chihuly Garden and Glass", "Seattle Center", "museum", 3, "Chihuly 玻璃艺术", "Chihuly glass", "雨天首选，出片", "Top rainy-day pick, photogenic"),
+        o("Pacific Science Center", "Seattle Center", "museum", 2, "科学中心", "Science Center", "蝴蝶馆 + IMAX", "Butterflies and IMAX"),
+        o("Frye Art Museum", "First Hill", "museum", 1, "Frye 免费艺术馆", "The Frye (free)", "安静免门票", "Quiet and free"),
+      ]},
+      { time: "18:00", slot_zh: "晚餐", slot_en: "Dinner", options: [
+        o("Din Tai Fung", "University Village", "food", 2, "鼎泰丰小笼包", "Din Tai Fung", "热乎管饱", "Warm and satisfying"),
+        o("Pike Place Chowder", "Pike Place", "food", 2, "海鲜浓汤", "Seafood chowder", "得奖的一碗", "The award-winning bowl"),
+        o("Salt & Straw", "Capitol Hill", "dessert", 2, "Salt & Straw", "Salt & Straw", "甜点收尾", "End on a scoop"),
+      ]},
+    ],
+  },
+  {
+    mood: "fete",
+    title_zh: "纪念日之夜",
+    title_en: "Anniversary Night",
+    summary_zh: "登高看城，沉浸艺术，再来一顿顶级大餐——值得被记住的一晚。",
+    summary_en: "Up for the view, into the art, then a top-tier dinner — a night to remember.",
+    stops: [
+      { time: "16:00", slot_zh: "登高", slot_en: "Up high", options: [
+        o("Smith Tower Observatory", "Pioneer Square", "viewpoint", 2, "史密斯塔观景台", "Smith Tower deck", "复古观景层 + 鸡尾酒", "Vintage deck with a cocktail bar"),
+        o("Sky View Observatory", "Downtown", "viewpoint", 2, "73 层观景台", "73rd-floor observatory", "全城最高", "The highest in town"),
+        o("Kerry Park", "Queen Anne", "viewpoint", 1, "Kerry Park 日落", "Kerry Park sunset", "明信片机位", "The postcard view"),
+      ]},
+      { time: "18:00", slot_zh: "艺术", slot_en: "Art", options: [
+        o("Chihuly Garden and Glass", "Seattle Center", "museum", 3, "Chihuly 玻璃艺术", "Chihuly glass", "浪漫加分", "A romance bonus"),
+        o("Seattle Art Museum", "Downtown", "museum", 2, "SAM", "Seattle Art Museum", "安静看展", "A calm gallery hour"),
+        o("Museum of Pop Culture", "Seattle Center", "museum", 3, "MoPOP", "MoPOP", "科幻音乐流行", "Sci-fi, music, pop"),
+      ]},
+      { time: "19:30", slot_zh: "大餐", slot_en: "Feast", options: [
+        o("Canlis", "Queen Anne", "food", 3, "Canlis fine dining", "Canlis fine dining", "西雅图顶级，专属纪念日", "Seattle's top tier, made for the night"),
+        o("The Walrus and the Carpenter", "Ballard", "food", 3, "Ballard 生蚝吧", "Ballard oyster bar", "氛围满分", "All atmosphere"),
+        o("Din Tai Fung", "University Village", "food", 2, "鼎泰丰", "Din Tai Fung", "稳妥备选", "The reliable fallback"),
+      ]},
+    ],
+  },
+  {
+    mood: "fete",
+    title_zh: "海上浪漫",
+    title_en: "Romance on the Water",
+    summary_zh: "海湾巡游，花园漫步，烛光晚餐——有水有花有仪式感。",
+    summary_en: "A bay cruise, a garden walk, a candlelit dinner — water, flowers, and ceremony.",
+    stops: [
+      { time: "15:00", slot_zh: "巡游", slot_en: "Cruise", options: [
+        o("Argosy Elliott Bay Cruise", "Waterfront", "water", 2, "海湾巡游", "Elliott Bay cruise", "天际线 + 雪山", "Skyline and snowy peaks"),
+        o("Seattle Great Wheel", "Waterfront", "amusement", 2, "封顶座厢摩天轮", "Great Wheel VIP gondola", "包厢更有仪式感", "The VIP gondola for the occasion"),
+        o("Center for Wooden Boats", "South Lake Union", "water", 1, "划木船", "Row a wooden boat", "小而浪漫", "Small and romantic"),
+      ]},
+      { time: "17:00", slot_zh: "花园", slot_en: "Garden", options: [
+        o("Washington Park Arboretum", "Madison Park", "garden", 1, "植物园漫步", "Arboretum walk", "黄昏光线很美", "Lovely light at dusk"),
+        o("Volunteer Park Conservatory", "Capitol Hill", "garden", 1, "维多利亚温室", "Victorian conservatory", "玻璃温室热带", "A glasshouse of tropics"),
+        o("Kubota Garden", "Rainier Beach", "garden", 1, "久保田庭园", "Kubota Garden", "清净小众", "Peaceful and hidden"),
+      ]},
+      { time: "19:30", slot_zh: "晚餐", slot_en: "Dinner", options: [
+        o("Canlis", "Queen Anne", "food", 3, "Canlis", "Canlis", "西雅图顶级", "Seattle's top tier"),
+        o("The Walrus and the Carpenter", "Ballard", "food", 3, "生蚝吧", "Oyster bar", "想轻松点来这", "If you'd rather keep it easy"),
+        o("Din Tai Fung", "University Village", "food", 2, "鼎泰丰", "Din Tai Fung", "稳妥又好吃", "Reliably delicious"),
+      ]},
+    ],
+  },
+  {
+    mood: "spark",
+    title_zh: "海湾一日",
+    title_en: "A Day on the Bay",
+    summary_zh: "水族馆、登塔、海滨晚餐——沿着海岸线玩一整天。",
+    summary_en: "Aquarium, a tower, a waterfront dinner — work your way down the shore.",
+    stops: [
+      { time: "13:00", slot_zh: "海滨", slot_en: "Waterfront", options: [
+        o("Seattle Aquarium", "Pike Place", "aquarium", 2, "海滨水族馆", "Seattle Aquarium", "水獭和触摸池", "Sea otters and a touch pool"),
+        o("Seattle Great Wheel", "Waterfront", "amusement", 2, "海湾摩天轮", "The Great Wheel", "海上转一圈", "A turn over the bay"),
+        o("Argosy Elliott Bay Cruise", "Waterfront", "water", 2, "海湾巡游", "Harbor cruise", "一小时船游", "An hour on the water"),
+      ]},
+      { time: "15:30", slot_zh: "地标", slot_en: "Landmark", options: [
+        o("Pike Place Market", "Downtown", "market", 1, "派克市场 + 口香糖墙", "Pike Place + Gum Wall", "经典必逛", "The classic must-see"),
+        o("Smith Tower Observatory", "Pioneer Square", "viewpoint", 2, "史密斯塔", "Smith Tower", "复古观景台", "The vintage deck"),
+        o("Space Needle", "Seattle Center", "landmark", 3, "太空针", "Space Needle", "旋转玻璃地板", "Rotating glass floor"),
+      ]},
+      { time: "18:30", slot_zh: "晚餐", slot_en: "Dinner", options: [
+        o("Pike Place Chowder", "Pike Place", "food", 2, "海鲜浓汤", "Seafood chowder", "海边一碗热的", "A hot bowl by the water"),
+        o("The Walrus and the Carpenter", "Ballard", "food", 3, "生蚝吧", "Oyster bar", "氛围满分", "All atmosphere"),
+        o("Din Tai Fung", "University Village", "food", 2, "鼎泰丰", "Din Tai Fung", "稳妥又好吃", "Reliably delicious"),
+      ]},
+    ],
+  },
+  {
+    mood: null,
+    title_zh: "夜色西雅图",
+    title_en: "Seattle After Dark",
+    summary_zh: "晚餐起场，泡进现场音乐或台球桌，宵夜甜点收尾——夜越晚越热闹。",
+    summary_en: "Dinner first, then live music or a pool table, late-night sweets to end — better as it gets later.",
+    stops: [
+      { time: "18:00", slot_zh: "晚餐", slot_en: "Dinner", options: [
+        o("Din Tai Fung", "University Village", "food", 2, "鼎泰丰", "Din Tai Fung", "开场吃饱", "Fuel up first"),
+        o("Pike Place Chowder", "Pike Place", "food", 2, "海鲜浓汤", "Seafood chowder", "快又暖", "Quick and warm"),
+        o("The Walrus and the Carpenter", "Ballard", "food", 3, "生蚝吧", "Oyster bar", "氛围拉满", "All vibe"),
+      ]},
+      { time: "20:00", slot_zh: "夜场", slot_en: "Night out", options: [
+        o("The Crocodile", "Belltown", "nightlife", 2, "Crocodile 现场音乐", "The Crocodile live music", "西雅图传奇 livehouse", "Seattle's legendary music venue"),
+        o("Garage Billiards", "Capitol Hill", "quirky", 2, "复古保龄台球", "Retro bowling & billiards", "越夜越闹", "Livelier late"),
+        o("Seattle Great Wheel", "Waterfront", "amusement", 2, "夜景摩天轮", "Great Wheel at night", "灯光下转一圈", "A turn under the lights"),
+      ]},
+      { time: "22:00", slot_zh: "宵夜甜点", slot_en: "Late sweet", options: [
+        o("Molly Moon's", "Wallingford", "dessert", 1, "Molly Moon's", "Molly Moon's", "深夜冰淇淋", "Late-night ice cream"),
+        o("Salt & Straw", "Capitol Hill", "dessert", 2, "Salt & Straw", "Salt & Straw", "脑洞口味", "Inventive flavors"),
+        o("Storyville Coffee", "Pike Place", "coffee", 2, "热饮收尾", "A warm drink to end", "甜点配热饮", "Sweets with something warm"),
+      ]},
+    ],
+  },
+  {
+    mood: null,
+    title_zh: "联合湖慢游",
+    title_en: "Lake Union Easy",
+    summary_zh: "湖上划船，草坡发呆，冰淇淋收尾——慢节奏的水边一天。",
+    summary_en: "Boats on the lake, a grassy hill to laze on, ice cream to end — a slow day by the water.",
+    stops: [
+      { time: "13:30", slot_zh: "水上", slot_en: "On water", options: [
+        o("Center for Wooden Boats", "South Lake Union", "water", 1, "划木船游联合湖", "Row on Lake Union", "免费木船，浪漫", "Free wooden boats, romantic"),
+        o("Argosy Elliott Bay Cruise", "Waterfront", "water", 2, "海湾巡游", "Harbor cruise", "想看海湾就这个", "For the bay views"),
+        o("Green Lake Park", "Green Lake", "water", 1, "Green Lake 划船", "Paddle on Green Lake", "租只脚踏船", "Rent a paddle boat"),
+      ]},
+      { time: "16:00", slot_zh: "草坡", slot_en: "Grass", options: [
+        o("Gas Works Park", "Wallingford", "park", 1, "Gas Works 草坡", "Gas Works hill", "天际线最佳机位", "The best skyline spot"),
+        o("Washington Park Arboretum", "Madison Park", "garden", 1, "植物园漫步", "Arboretum walk", "安静绿意", "Quiet and green"),
+        o("Kerry Park", "Queen Anne", "viewpoint", 1, "Kerry Park", "Kerry Park", "顺路看个全景", "A panorama on the way"),
+      ]},
+      { time: "18:00", slot_zh: "甜点", slot_en: "Sweet", options: [
+        o("Molly Moon's", "Wallingford", "dessert", 1, "Molly Moon's", "Molly Moon's", "本地手工冰淇淋", "Local handmade ice cream"),
+        o("Salt & Straw", "Capitol Hill", "dessert", 2, "Salt & Straw", "Salt & Straw", "排队也认了", "Worth the queue"),
+        o("Pike Place Chowder", "Pike Place", "food", 2, "海鲜浓汤", "Chowder", "想吃正餐", "If you'd rather a real meal"),
+      ]},
+    ],
+  },
 ];
