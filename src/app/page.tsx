@@ -78,8 +78,8 @@ export default async function Home() {
   }));
 
   return (
-    <main className="min-h-[100dvh] px-5 py-8 md:px-8">
-      <div className="mx-auto w-full max-w-5xl">
+    <main className="min-h-[100dvh] px-5 py-6">
+      <div className="mx-auto w-full max-w-md">
         <header className="flex items-center justify-between">
           <p className="text-base font-semibold tracking-tighter">DateDrop</p>
           <div className="flex items-center gap-3">
@@ -97,10 +97,8 @@ export default async function Home() {
           </div>
         </header>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-[1.65fr_1fr]">
-          {/* 左：本周计划（主舞台） */}
-          <section>
-            <p className={label}>{t(lang, "home.this_week")}</p>
+        <section className="mt-8">
+          <p className={label}>{t(lang, "home.this_week")}</p>
             <div className="mt-3">
               <PlanCard
                 initialPlan={(plan as Plan) ?? null}
@@ -117,10 +115,8 @@ export default async function Home() {
             </div>
           </section>
 
-          {/* 右：状态 / 入口 / 匹配池 */}
-          <div className="space-y-8">
-            <section>
-              <p className={label}>{t(lang, "home.us")}</p>
+        <section className="mt-7">
+          <p className={label}>{t(lang, "home.us")}</p>
               {partnerId ? (
                 <div className={`${panel} mt-3 p-6`}>
                   <div className="flex items-center justify-between gap-3">
@@ -153,8 +149,8 @@ export default async function Home() {
               )}
             </section>
 
-            <section>
-              <p className={label}>{t(lang, "home.discover")}</p>
+        <section className="mt-7">
+          <p className={label}>{t(lang, "home.discover")}</p>
               <Link
                 href="/swipe"
                 className={`${panel} mt-3 flex items-center justify-between p-6 transition hover:-translate-y-[1px] hover:shadow-[0_24px_48px_-16px_rgba(0,0,0,0.08)] active:scale-[0.99]`}
@@ -191,8 +187,8 @@ export default async function Home() {
               </Link>
             </section>
 
-            <section>
-              <p className={label}>{t(lang, "home.match_pool")}</p>
+        <section className="mt-7">
+          <p className={label}>{t(lang, "home.match_pool")}</p>
               <div className={`${panel} mt-3 px-6 py-2`}>
                 {matches.length === 0 ? (
                   <p className="py-6 text-xs leading-relaxed text-zinc-400">
@@ -216,8 +212,6 @@ export default async function Home() {
                 )}
               </div>
             </section>
-          </div>
-        </div>
       </div>
     </main>
   );
