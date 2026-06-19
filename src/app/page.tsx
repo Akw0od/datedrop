@@ -5,6 +5,7 @@ import {
   ArrowRight,
   Cards,
   HeartStraight,
+  ImageSquare,
 } from "@phosphor-icons/react/dist/ssr";
 import { CopyButton } from "@/components/copy-button";
 import { UnpairButton } from "@/components/unpair-button";
@@ -166,6 +167,23 @@ export default async function Home() {
                     </p>
                     <p className="mt-0.5 text-xs text-zinc-500">
                       {t(lang, "home.swipe_sub")}
+                    </p>
+                  </div>
+                </div>
+                <ArrowRight size={16} className="text-zinc-400" />
+              </Link>
+              <Link
+                href="/recap"
+                className={`${panel} mt-3 flex items-center justify-between p-6 transition hover:-translate-y-[1px] hover:shadow-[0_24px_48px_-16px_rgba(0,0,0,0.08)] active:scale-[0.99]`}
+              >
+                <div className="flex items-center gap-3">
+                  <ImageSquare size={20} className="text-rose-600" />
+                  <div>
+                    <p className="text-sm font-semibold tracking-tight">
+                      {t(lang, "recap.entry")}
+                    </p>
+                    <p className="mt-0.5 text-xs text-zinc-500">
+                      {t(lang, "recap.entry_sub")}
                     </p>
                   </div>
                 </div>
