@@ -56,7 +56,7 @@ function LoginForm() {
   }
 
   const inputCls =
-    "w-full rounded-xl border border-zinc-200 bg-white px-3.5 py-2.5 text-sm outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-100";
+    "w-full rounded-xl border border-zinc-200 bg-[var(--surface)] px-3.5 py-2.5 text-sm outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-100";
 
   return (
     <div className="grid min-h-[100dvh] md:grid-cols-2">
@@ -102,7 +102,7 @@ function LoginForm() {
           <button
             type="button"
             onClick={google}
-            className="mt-8 flex w-full items-center justify-center gap-2.5 rounded-xl border border-zinc-200 bg-white py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-50 active:scale-[0.98]"
+            className="mt-8 flex w-full items-center justify-center gap-2.5 rounded-xl border border-zinc-200 bg-[var(--surface)] py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-50 active:scale-[0.98]"
           >
             <GoogleLogo size={18} weight="bold" className="text-rose-600" />
             {t(lang, "login.google")}

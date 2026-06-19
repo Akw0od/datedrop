@@ -6,7 +6,6 @@ import {
   Cards,
   HeartStraight,
 } from "@phosphor-icons/react/dist/ssr";
-import { SignOutButton } from "@/components/sign-out-button";
 import { CopyButton } from "@/components/copy-button";
 import { UnpairButton } from "@/components/unpair-button";
 import { PlanCard } from "@/components/plan-card";
@@ -20,7 +19,7 @@ import type { Plan } from "@/lib/types";
 
 const label = "text-[11px] font-medium uppercase tracking-widest text-zinc-400";
 const panel =
-  "rounded-[2rem] border border-zinc-200/60 bg-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]";
+  "rounded-[2rem] border border-zinc-200/60 bg-[var(--surface)] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]";
 
 export default async function Home() {
   const lang = await getLang();
@@ -84,8 +83,16 @@ export default async function Home() {
           <p className="text-base font-semibold tracking-tighter">DateDrop</p>
           <div className="flex items-center gap-3">
             <LangToggle />
-            <span className="text-sm text-zinc-500">{me?.display_name}</span>
-            <SignOutButton />
+            <Link
+              href="/profile"
+              aria-label={t(lang, "home.profile")}
+              className="flex items-center gap-2 transition hover:opacity-80"
+            >
+              <span className="text-sm text-zinc-500">{me?.display_name}</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-600 text-[12px] font-medium text-white">
+                {(me?.display_name || "?").trim().slice(-1)}
+              </span>
+            </Link>
           </div>
         </header>
 

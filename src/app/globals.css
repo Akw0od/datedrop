@@ -3,6 +3,34 @@
 :root {
   --background: #fafafa;
   --foreground: #18181b;
+  --surface: #ffffff; /* 卡片/面板底色，主题可覆盖（深色模式变深） */
+}
+
+/* ============ 主题（覆盖 Tailwind v4 颜色变量，组件无需改色）============ */
+/* 玫瑰=默认(:root)。暖砂/林野只换强调色；墨夜额外反转中性色。 */
+[data-theme="sand"] {
+  --background: #faf7f2;
+  --color-rose-50: #fff7ed; --color-rose-100: #ffedd5; --color-rose-200: #fed7aa;
+  --color-rose-300: #fdba74; --color-rose-400: #fb923c; --color-rose-600: #c2410c;
+  --color-rose-700: #9a3412; --color-rose-800: #7c2d12; --color-rose-900: #6b2710;
+}
+[data-theme="sage"] {
+  --background: #f4f8f5;
+  --color-rose-50: #ecfdf5; --color-rose-100: #d1fae5; --color-rose-200: #a7f3d0;
+  --color-rose-300: #6ee7b7; --color-rose-400: #34d399; --color-rose-600: #047857;
+  --color-rose-700: #065f46; --color-rose-800: #064e3b; --color-rose-900: #053a2c;
+}
+[data-theme="midnight"] {
+  --background: #16161a;
+  --foreground: #ededed;
+  --surface: #1f1f24;
+  --color-rose-50: #2a1620; --color-rose-100: #3a1b2a; --color-rose-200: #4c2330;
+  --color-rose-300: #7a3346; --color-rose-400: #fb7185; --color-rose-600: #f43f5e;
+  --color-rose-700: #fb7185; --color-rose-800: #fecdd3; --color-rose-900: #fecdd3;
+  --color-zinc-50: #232328; --color-zinc-100: #2a2a30; --color-zinc-200: #3a3a42;
+  --color-zinc-300: #52525b; --color-zinc-400: #8b8b95; --color-zinc-500: #a1a1aa;
+  --color-zinc-600: #c4c4cc; --color-zinc-700: #d4d4dc; --color-zinc-800: #e8e8ee;
+  --color-zinc-900: #f4f4f6; --color-zinc-950: #fafafa;
 }
 
 @theme inline {

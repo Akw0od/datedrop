@@ -44,7 +44,7 @@ function TopCard({
   return (
     <motion.div
       key={card.id}
-      className="absolute inset-0 flex cursor-grab flex-col rounded-[2rem] border border-zinc-200/60 bg-white p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] active:cursor-grabbing"
+      className="absolute inset-0 flex cursor-grab flex-col rounded-[2rem] border border-zinc-200/60 bg-[var(--surface)] p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] active:cursor-grabbing"
       style={{ x, rotate }}
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
@@ -193,7 +193,7 @@ export function SwipeDeck({
 
       <div className="relative mx-auto mt-8 h-[440px] w-full max-w-md flex-1">
         {done ? (
-          <div className="flex h-full flex-col items-start justify-center rounded-[2rem] border border-zinc-200/60 bg-white p-10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+          <div className="flex h-full flex-col items-start justify-center rounded-[2rem] border border-zinc-200/60 bg-[var(--surface)] p-10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
             <Sparkle size={28} weight="fill" className="text-rose-600" />
             <h2 className="mt-4 text-xl font-semibold tracking-tight">
               {deck.length > 0 ? t(lang, "swipe.round_done") : t(lang, "swipe.empty")}
@@ -211,7 +211,7 @@ export function SwipeDeck({
         ) : (
           <>
             {deck[index + 1] && (
-              <div className="absolute inset-0 translate-y-3 scale-[0.96] rounded-[2rem] border border-zinc-200/60 bg-white opacity-60" />
+              <div className="absolute inset-0 translate-y-3 scale-[0.96] rounded-[2rem] border border-zinc-200/60 bg-[var(--surface)] opacity-60" />
             )}
             <AnimatePresence mode="popLayout">
               <TopCard
@@ -231,7 +231,7 @@ export function SwipeDeck({
           <button
             onClick={() => swipe(false)}
             aria-label={t(lang, "swipe.nope")}
-            className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-500 shadow-sm transition hover:border-zinc-300 hover:text-zinc-700 active:scale-95"
+            className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-200 bg-[var(--surface)] text-zinc-500 shadow-sm transition hover:border-zinc-300 hover:text-zinc-700 active:scale-95"
           >
             <X size={22} weight="bold" />
           </button>

@@ -90,7 +90,7 @@ function StationCard({
         {t(lang, "plan.station", { n: index + 1 })} · {pick(lang, slot, slotEn)}
       </p>
       <div
-        className={`rounded-[1.75rem] border bg-white p-5 ${locked ? "border-rose-200" : "border-zinc-200/70"}`}
+        className={`rounded-[1.75rem] border bg-[var(--surface)] p-5 ${locked ? "border-rose-200" : "border-zinc-200/70"}`}
         style={{ boxShadow: "0 16px 34px -18px rgba(0,0,0,0.08)" }}
       >
         <div className="flex items-start justify-between">
@@ -108,7 +108,7 @@ function StationCard({
             <button
               onClick={onSwap}
               aria-label={t(lang, "plan.swap")}
-              className="flex items-center gap-1 rounded-full border border-zinc-200 bg-white px-2.5 py-1.5 text-[12px] font-medium text-zinc-500 transition hover:border-zinc-300 hover:text-zinc-800 active:scale-[0.96]"
+              className="flex items-center gap-1 rounded-full border border-zinc-200 bg-[var(--surface)] px-2.5 py-1.5 text-[12px] font-medium text-zinc-500 transition hover:border-zinc-300 hover:text-zinc-800 active:scale-[0.96]"
             >
               <Shuffle size={13} /> {t(lang, "plan.swap")}
               {optionCount > 1 && <span className="font-mono text-[10px] text-zinc-300">{optionCount}</span>}
@@ -193,7 +193,7 @@ function SwapSheet({
               <button
                 key={i}
                 onClick={() => pickIdx(i)}
-                className={`flex w-[78%] shrink-0 snap-center flex-col rounded-[1.5rem] border bg-white p-5 text-left transition-all duration-200 ${
+                className={`flex w-[78%] shrink-0 snap-center flex-col rounded-[1.5rem] border bg-[var(--surface)] p-5 text-left transition-all duration-200 ${
                   on ? "border-rose-300 shadow-[0_18px_36px_-16px_rgba(225,29,72,0.35)]" : "border-zinc-200 opacity-60"
                 }`}
               >
@@ -309,7 +309,7 @@ export function PlanCard({
     setBusy(false);
   }
 
-  const panel = "rounded-[2rem] border border-zinc-200/60 bg-white shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]";
+  const panel = "rounded-[2rem] border border-zinc-200/60 bg-[var(--surface)] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]";
 
   if (!bothBound) {
     return (
@@ -353,7 +353,7 @@ export function PlanCard({
                   key={id}
                   onClick={() => setMood(on ? null : id)}
                   className={`flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-[13px] font-medium transition active:scale-[0.97] ${
-                    on ? "border-rose-200 bg-rose-50 text-rose-700" : "border-zinc-200 bg-white text-zinc-500 hover:bg-zinc-50"
+                    on ? "border-rose-200 bg-rose-50 text-rose-700" : "border-zinc-200 bg-[var(--surface)] text-zinc-500 hover:bg-zinc-50"
                   }`}
                 >
                   <Icon size={16} weight={on ? "fill" : "regular"} />
@@ -485,7 +485,7 @@ export function PlanCard({
             <button onClick={accept} disabled={busy} className="flex flex-1 items-center justify-center gap-1.5 rounded-2xl bg-rose-600 py-3.5 text-[15px] font-semibold text-white transition hover:bg-rose-700 active:scale-[0.98] disabled:opacity-60">
               <Check size={16} weight="bold" /> {t(lang, "plan.commit")}
             </button>
-            <button onClick={generate} disabled={rerollsLeft <= 0} className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-white px-4 py-3.5 text-[14px] font-medium text-zinc-500 transition hover:bg-zinc-50 active:scale-[0.98] disabled:opacity-40">
+            <button onClick={generate} disabled={rerollsLeft <= 0} className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-[var(--surface)] px-4 py-3.5 text-[14px] font-medium text-zinc-500 transition hover:bg-zinc-50 active:scale-[0.98] disabled:opacity-40">
               <Shuffle size={16} />
               <span className="flex flex-col items-start leading-none">
                 <span>{t(lang, "plan.reroll")}</span>

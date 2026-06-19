@@ -94,7 +94,7 @@ export default function PairPage() {
               value={code}
               onChange={(e) => setCode(e.target.value)}
               placeholder={t(lang, "pair.code_ph")}
-              className="min-w-0 flex-1 rounded-xl border border-zinc-200 bg-white px-3.5 py-2.5 font-mono text-sm outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-100"
+              className="min-w-0 flex-1 rounded-xl border border-zinc-200 bg-[var(--surface)] px-3.5 py-2.5 font-mono text-sm outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-100"
             />
             <button
               disabled={loading !== null}
