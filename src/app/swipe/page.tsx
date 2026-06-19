@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import { SwipeDeck } from "@/components/swipe-deck";
+import { getMyCouple } from "@/lib/couple";
 import type { DateCard } from "@/lib/types";
 
 export default async function SwipePage() {
@@ -10,11 +11,7 @@ export default async function SwipePage() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/login?next=/swipe");
 
-  const { data: couple } = await supabase
-    .from("couples")
-    .select("*")
-    .or(`user_a.eq.${user.id},user_b.eq.${user.id}`)
-    .maybeSingle();
+  const couple = await getMyCouple(supabase, user.id);
   if (!couple) redirect("/pair");
 
   const [{ data: cards }, { data: swipes }] = await Promise.all([

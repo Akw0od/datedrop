@@ -13,6 +13,7 @@ import { TagIcon } from "@/components/tag-icon";
 import { LangToggle } from "@/components/lang-toggle";
 import { nextSaturday } from "@/lib/dates";
 import { getLang } from "@/lib/lang";
+import { getMyCouple } from "@/lib/couple";
 import { t, pick } from "@/lib/dict";
 import type { Plan } from "@/lib/types";
 
@@ -28,11 +29,7 @@ export default async function Home() {
   } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  const { data: couple } = await supabase
-    .from("couples")
-    .select("*")
-    .or(`user_a.eq.${user.id},user_b.eq.${user.id}`)
-    .maybeSingle();
+  const couple = await getMyCouple(supabase, user.id);
   if (!couple) redirect("/pair");
 
   const partnerId = couple.user_a === user.id ? couple.user_b : couple.user_a;
@@ -100,7 +97,9 @@ export default async function Home() {
                 initialPlan={(plan as Plan) ?? null}
                 bothBound={!!partnerId}
                 meId={user.id}
-                memberIds={[couple.user_a, couple.user_b].filter(Boolean)}
+                memberIds={[couple.user_a, couple.user_b].filter(
+                  (v): v is string => !!v
+                )}
                 coupleId={couple.id}
                 weekOf={weekOf}
                 meName={me?.display_name ?? (lang === "en" ? "You" : "你")}

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { LinkBreak } from "@phosphor-icons/react/dist/ssr";
 import { getLang } from "@/lib/lang";
+import { getMyCouple } from "@/lib/couple";
 import { t } from "@/lib/dict";
 
 export default async function InvitePage({
@@ -20,6 +21,10 @@ export default async function InvitePage({
 
   const { data: coupleId } = await supabase.rpc("join_couple", { code });
   if (coupleId) redirect("/");
+
+  // 绑定没成（自己的码 / 已被用 / 你已经有伴了）——已有伴就直接回家，别报"失效"
+  const existing = await getMyCouple(supabase, user.id);
+  if (existing) redirect("/");
 
   return (
     <main className="flex min-h-[100dvh] items-center px-6">

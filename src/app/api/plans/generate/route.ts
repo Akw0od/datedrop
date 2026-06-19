@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { generatePlan } from "@/lib/plan";
+import { getMyCouple } from "@/lib/couple";
 
 // 生成/重摇本周计划。重摇上限与场地校验都在 lib/plan.ts 里强制执行
 export async function POST(req: Request) {
@@ -13,11 +14,7 @@ export async function POST(req: Request) {
   } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: "未登录" }, { status: 401 });
 
-  const { data: couple } = await supabase
-    .from("couples")
-    .select("*")
-    .or(`user_a.eq.${user.id},user_b.eq.${user.id}`)
-    .maybeSingle();
+  const couple = await getMyCouple(supabase, user.id);
   if (!couple)
     return NextResponse.json({ error: "还没有绑定情侣空间" }, { status: 400 });
   if (!couple.user_b)

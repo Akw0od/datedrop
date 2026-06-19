@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { UsersThree, ArrowRight } from "@phosphor-icons/react";
 import { createClient } from "@/lib/supabase/client";
+import { getMyCouple } from "@/lib/couple";
 import { useLang } from "@/components/lang-provider";
 import { LangToggle } from "@/components/lang-toggle";
 import { t } from "@/lib/dict";
@@ -24,6 +25,13 @@ export default function PairPage() {
     } = await supabase.auth.getUser();
     if (!user) {
       router.push("/login");
+      return;
+    }
+    // 已经有空间了就别再建（防止重复 couple 把绑定搅乱）
+    const existing = await getMyCouple(supabase, user.id);
+    if (existing) {
+      router.push("/");
+      router.refresh();
       return;
     }
     const { error } = await supabase
