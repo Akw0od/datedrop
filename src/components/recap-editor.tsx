@@ -69,10 +69,12 @@ export function RecapEditor({
     if (!cardRef.current) return;
     setDownloading(true);
     try {
+      // 等手作字体加载完再导出，否则 PNG 里字体会回退
+      if (document.fonts?.ready) await document.fonts.ready;
       const dataUrl = await toPng(cardRef.current, {
         cacheBust: true,
         pixelRatio: 2,
-        backgroundColor: "#fafafa",
+        backgroundColor: "#f1e7d2",
       });
       const a = document.createElement("a");
       a.href = dataUrl;
@@ -86,7 +88,7 @@ export function RecapEditor({
 
   return (
     <div className="flex flex-col items-center">
-      <div ref={cardRef} className="rounded-[28px] shadow-[0_30px_60px_-25px_rgba(0,0,0,0.18)]">
+      <div ref={cardRef} className="rounded-[18px] shadow-[0_34px_64px_-28px_rgba(74,55,30,0.4)]">
         <RecapCard
           plan={plan}
           lang={lang}

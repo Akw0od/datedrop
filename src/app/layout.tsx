@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Caveat, Ma_Shan_Zheng } from "next/font/google";
 import "./globals.css";
 import { getLang } from "@/lib/lang";
 import { getTheme } from "@/lib/theme";
@@ -13,6 +13,19 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// 周报剪纸风用：手写体（拉丁）+ 毛笔体（中文）。preload:false → 只在用到的页面加载
+const handFont = Caveat({
+  variable: "--font-hand",
+  subsets: ["latin"],
+  preload: false,
+});
+
+const brushFont = Ma_Shan_Zheng({
+  variable: "--font-brush",
+  weight: "400",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -53,7 +66,7 @@ export default async function RootLayout({
       lang={lang === "en" ? "en" : "zh-CN"}
       data-theme={theme}
       style={{ colorScheme: theme === "midnight" ? "dark" : "light" }}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${handFont.variable} ${brushFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <LangProvider initial={lang}>{children}</LangProvider>
